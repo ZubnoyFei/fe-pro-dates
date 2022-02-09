@@ -37,6 +37,7 @@ function formatTime(date) {
 const options = {
   hour: 'numeric',
   minutes: 'numeric',
+},
 /*
 Напишите функцию getLastDayOfMonth(year, month), 
 возвращающую последнее число месяца. Иногда это 30, 31
@@ -49,7 +50,7 @@ month – месяц от 0 до 11.
 function getLastDayOfMonth(year, month) {
 
   const fullDate = new Date(year, month + 1);
-  date.setDate(date.getDate() - 1);
+  fullDate.setDate(fullDate.getDate() - 1);
   return fullDate.getDate();
 
 }
