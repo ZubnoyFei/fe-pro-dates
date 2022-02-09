@@ -48,11 +48,12 @@ month – месяц от 0 до 11.
 К примеру, getLastDayOfMonth(2012, 1) = 29 (високосный год, февраль).
 */
 function getLastDayOfMonth(year, month) {
- let newDate = new Date(year, month + 1);
-  newDate.setDate(newDate.getDate() - 1);
-  return newDate.getDate();
+ let myDate = new Date(year, month + 1);
+  myDate.setDate(myDate.getDate() - 1);
+  return myDate.getDate();
 
 }
+
 
 module.exports = {
   getDay,
