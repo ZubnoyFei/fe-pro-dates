@@ -30,11 +30,13 @@ function getDay(date, lang) {
 // Вид должен быть такой 12:02(часы и минуты), то есть если у вас одно число на одном из
 // компонентов, то добавляем 0 перед ним
 function formatTime(date) {
-  const hours = (date.getHours()).toString().padStart(2, '0');
-  const minutes = (date.getMinutes()).toString().padStart(2, '0');
-  return `${hours}:${minutes}`
+  return date.toLocaleString('ru-RU', options)
 }
 
+
+const options = {
+  hour: 'numeric',
+  minutes: 'numeric',
 /*
 Напишите функцию getLastDayOfMonth(year, month), 
 возвращающую последнее число месяца. Иногда это 30, 31
@@ -46,7 +48,8 @@ month – месяц от 0 до 11.
 */
 function getLastDayOfMonth(year, month) {
 
-  const fullDate = new Date(year, month + 1, 0);
+  const fullDate = new Date(year, month + 1);
+  date.setDate(date.getDate() - 1);
   return fullDate.getDate();
 
 }
